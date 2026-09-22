@@ -288,4 +288,5 @@ C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\refint\aspnetWebApp.dl
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\aspnetWebApp.pdb
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\aspnetWebApp.genruntimeconfig.cache
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\ref\aspnetWebApp.dll
-C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\compressed\2v9ug8irji-{0}-kd1t5pdd52-kd1t5pdd52.gz
+C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\aspnetWebApp.sourcelink.json
+C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\compressed\2v9ug8irji-{0}-mfod7gl2s9-mfod7gl2s9.gz

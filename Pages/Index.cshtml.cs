@@ -1,3 +1,5 @@
+using System;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -53,19 +55,33 @@ public class IndexModel : PageModel
             ? AboutMe 
             : "Не указана";
 
-        string message = $"Анкета студента\n\n" +
-                $"Имя: {Name}\n" + 
-                $"Телефон: {Phone}\n" +
-                $"Email: {Email}\n" +
-                $"Город: {City}\n" + // НОВОЕ
-                $"Специальность: {Speciality}\n" +
-                $"Основной язык: {MainLanguage}\n" + // НОВОЕ
-                $"Формат обучения: {StudyFormat}\n" + // НОВОЕ
-                $"Курс: {Course}\n" +
-                $"Дата рождения: {BirthDate}\n" +
-                $"Технологии: {technologies}\n" +
-                $"О себе: {aboutMeText}"; // НОВОЕ
+        // string message = $"Анкета студента\n\n" +
+        //         $"Имя: {Name}\n" + 
+        //         $"Телефон: {Phone}\n" +
+        //         $"Email: {Email}\n" +
+        //         $"Город: {City}\n" + // НОВОЕ
+        //         $"Специальность: {Speciality}\n" +
+        //         $"Основной язык: {MainLanguage}\n" + // НОВОЕ
+        //         $"Формат обучения: {StudyFormat}\n" + // НОВОЕ
+        //         $"Курс: {Course}\n" +
+        //         $"Дата рождения: {BirthDate}\n" +
+        //         $"Технологии: {technologies}\n" +
+        //         $"О себе: {aboutMeText}"; // НОВОЕ
+        var student = new {
+            Name,
+            Phone,
+            Email,
+            City,
+            Speciality,
+            MainLanguage,
+            StudyFormat,
+            Course,
+            BirthDate,
+            Technologies,
+            AboutMe
+        };
 
-        return Content(message);
+        return Content(JsonSerializer.Serialize(student),
+        "application/json");
     }
 }
