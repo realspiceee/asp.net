@@ -129,14 +129,20 @@
             Отправить
         </button>
 
+        <button class="clear-button" type="reset">
+            Очистить
+        </button>
+
     </form>
 
+    <div id="status" class="status"></div>
+
     <div id="result" class="student-card">
-            <div class="student-card-header">
-                <h2>Анкета отправлена</h2>
-                <p>Данные студента</p>
-            </div>
-            <div class="student-info">
+        <div class="student-card-header">
+            <h2>Анкета отправлена</h2>
+            <p>Данные студента</p>
+        </div>
+        <div class="student-info">
             <div class="info-item">
                 <span>Имя</span>
                 <strong id="result-name"></strong>
@@ -151,12 +157,12 @@
             </div>
             <div class="info-item">
                 <span>Город</span>
-                <strong id="result-city"></strong> 
-            </div> 
+                <strong id="result-city"></strong>
+            </div>
 
             <div class="info-item">
                 <span>Специальность</span>
-            <strong id="result-speciality"></strong>
+                <strong id="result-speciality"></strong>
             </div>
             <div class="info-item">
                 <span>Основной язык</span>
@@ -182,19 +188,19 @@
                 <span>О себе</span>
                 <strong id="result-aboutMe"></strong>
             </div>
-            </div>
         </div>
     </div>
+</div>
 
-    @if (Model.Message != null)
-    {
-        <div class="result">
-            <h3>Данные анкеты:</h3>
-            <p style="white-space: pre-line;">
-                @Model.Message
-            </p>
-        </div>
-    }
+@if (Model.Message != null)
+{
+    <div class="result">
+        <h3>Данные анкеты:</h3>
+        <p style="white-space: pre-line;">
+            @Model.Message
+        </p>
+    </div>
+}
 
 </div>
 
@@ -204,7 +210,8 @@
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
-        const button = form.querySelector("button");
+        const button = form.querySelector("button[type='submit']");
+        const status = document.querySelector('#status');
         const formData = new FormData(form);
         button.disabled = true;
         button.textContent = "Отправка...";
@@ -212,30 +219,46 @@
         console.log(button);
         console.log(formData);
 
+        try {
 
-        const response = await fetch("", {
-            method: "POST",
-            body: formData
-        });
+            const response = await fetch("", {
+                method: "POST",
+                body: formData
+            });
 
-        const data = await response.json();
-        await new Promise(resolve => setTimeout(resolve, 1500));
+            if(!response.ok){
+                throw new Error('Ошибка сервера');
+            }
 
-        document.querySelector("#result-name").textContent = data.Name
-        document.querySelector("#result-phone").textContent = data.Phone
-        document.querySelector("#result-email").textContent = data.Email
-        document.querySelector("#result-city").textContent = data.City
-        document.querySelector("#result-speciality").textContent = data.Speciality
-        document.querySelector("#result-mainLanguage").textContent = data.MainLanguage
-        document.querySelector("#result-studyFormat").textContent = data.StudyFormat
-        document.querySelector("#result-course").textContent = data.Course
-        document.querySelector("#result-birthDate").textContent = data.BirthDate
-        document.querySelector("#result-technologies").textContent = data.Technologies
-        document.querySelector("#result-aboutMe").textContent = data.AboutMe
+            const data = await response.json();
+            await new Promise(resolve => setTimeout(resolve, 1500));
 
-        console.log(data);
-        document.querySelector("#result").style.display = "block";
-        button.textContent = "Анкета отправлена ╰(*°▽°*)╯";
-        button.disabled = false;
-    })
+            document.querySelector("#result-name").textContent = data.Name
+            document.querySelector("#result-phone").textContent = data.Phone
+            document.querySelector("#result-email").textContent = data.Email
+            document.querySelector("#result-city").textContent = data.City
+            document.querySelector("#result-speciality").textContent = data.Speciality
+            document.querySelector("#result-mainLanguage").textContent = data.MainLanguage
+            document.querySelector("#result-studyFormat").textContent = data.StudyFormat
+            document.querySelector("#result-course").textContent = data.Course
+            document.querySelector("#result-birthDate").textContent = data.BirthDate
+            document.querySelector("#result-technologies").textContent = data.Technologies
+            document.querySelector("#result-aboutMe").textContent = data.AboutMe
+
+            console.log(data);
+            document.querySelector("#result").style.display = "block";
+            button.textContent = "Анкета отправлена ╰(*°▽°*)╯";
+        } catch (error) {
+            status.textContent = "Не удалось отправить анкету";
+        } finally {
+            button.disabled = false;
+            button.textContent = "Отправить";
+        }
+    });
+
+    form.addEventListener("reset", function() {
+            document.querySelector("#result").style.display = "none";
+            document.querySelector("#status").textContent = "";
+    });
+
 </script>

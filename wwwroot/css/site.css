@@ -100,7 +100,30 @@ cursor: pointer;
 }
 
 .form-button:hover {
-background: #0056b3;
+    background: #0056b3;
+}
+
+.clear-button {
+width: 100%;
+margin-top: 13px;
+padding: 13px;
+border: 1px solid black;
+border-radius: 10px;
+background: #ffffff;
+color: black;
+font-size: 16px;
+cursor: pointer;
+}
+
+.clear-button:hover{
+    background: #b3b3b3;
+}
+
+.status{
+    margin-top: 15px;
+    padding: 12px 15px;
+    text-align: center;
+    color: red;
 }
 
 .form-group input[type="text"],
