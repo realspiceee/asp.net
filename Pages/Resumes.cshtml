@@ -18,6 +18,30 @@
         </a>
     </div>
 
+    <form method="get" class="resume-search-form">
+        <div class="search-field">
+            <label for="search">Имя кандидата</label>
+            <input type="text" id="search" name="search" 
+            value="@Model.Search" placeholder="Иван" class="border-0"/>
+        </div>
+        <div class="search-field">
+            <label for="specialityFilter">Специальность</label>
+            <select name="specialityFilter" id="specialityFilter">
+                <option value="">Все специальности</option>
+                @foreach (var speciality in Model.Specialities)
+                {
+                      <option value="@speciality"
+                       selected="@(Model.SpecialityFilter == speciality)">
+                       @speciality</option>
+                    }
+            </select>
+        </div>
+        <div class="search-actions">
+            <button type="submit" class="home-button">Найти резюме</button>
+            <a asp-page="/Resumes" class="search-reset">Сбросить</a>
+        </div>
+    </form>
+
     <p class="resumes-count">
         Всего резюме:
         @Model.Students.Count
@@ -25,18 +49,14 @@
 
     @if (Model.Students.Count == 0)
     {
-
-         <div class ="resume-empty">
+        <div class="resume-empty">
             <h2>Пока нет резюме</h2>
-            <p>Стань первым - заполни свою анкету</p>
-
-            <a asp-page="/CreateResume">
-                Создать первое резюме
-            </a>
-            </div>
+            <p>Стань первым - заполни анкету</p>
+            <a asp-page="/CreateResume">Создать первое резюме</a>
+        </div>
     }
-
-    else{
+    else
+    {
         <div class="resumes-grid">
             @foreach (var student in Model.Students)
             {
@@ -45,32 +65,28 @@
                         @student.Speciality
                     </p>
                     <h2>@student.Name</h2>
-                    <p>student.Course</p>
-                    <div class ="resume-details">
+                    <p>@student.Course</p>
+                    <div class="resume-details">
                         <p>
                             <strong>Email:</strong>
-                                @student.Email
+                            @student.Email
                         </p>
-
                         <p>
                             <strong>Телефон:</strong>
-                                @student.Phone
+                            @student.Phone
                         </p>
-
                         <p>
                             <strong>Технологии:</strong>
-                            @(student.Technologies.Length > 0
-                            ? string.Join(",", student.Technologies) : "Не указаны")
-
+                            @(student.Technologies.Length > 0 ?
+                            string.Join(", ", student.Technologies)
+                            : "Не указаны")
                         </p>
-
                     </div>
-
-
+                    <a class="resume-details-button" asp-page="/Resume"
+                    asp-route-id="@student.Id">Подробнее</a>
                 </article>
             }
-
-       </div>
-
-        
+        </div>
     }
+
+</div>

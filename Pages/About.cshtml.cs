@@ -4,8 +4,10 @@ namespace aspnetWebApp.Pages;
 
 public class AboutModel : PageModel
 {
+
     public void OnGet()
     {
-        
+    
     }
+   
 }

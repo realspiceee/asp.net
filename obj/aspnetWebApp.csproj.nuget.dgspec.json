@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\106010241\\Desktop\\asp-net-ajax-9-4-RPO-23-5\\aspnetWebApp.csproj": {}
+    "C:\\Users\\106010241\\Desktop\\aspnetWebApp\\aspnetWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\106010241\\Desktop\\asp-net-ajax-9-4-RPO-23-5\\aspnetWebApp.csproj": {
+    "C:\\Users\\106010241\\Desktop\\aspnetWebApp\\aspnetWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\106010241\\Desktop\\asp-net-ajax-9-4-RPO-23-5\\aspnetWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\106010241\\Desktop\\aspnetWebApp\\aspnetWebApp.csproj",
         "projectName": "aspnetWebApp",
-        "projectPath": "C:\\Users\\106010241\\Desktop\\asp-net-ajax-9-4-RPO-23-5\\aspnetWebApp.csproj",
+        "projectPath": "C:\\Users\\106010241\\Desktop\\aspnetWebApp\\aspnetWebApp.csproj",
         "packagesPath": "C:\\Users\\106010241\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\106010241\\Desktop\\asp-net-ajax-9-4-RPO-23-5\\obj\\",
+        "outputPath": "C:\\Users\\106010241\\Desktop\\aspnetWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
