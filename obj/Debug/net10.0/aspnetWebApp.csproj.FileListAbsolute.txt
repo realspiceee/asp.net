@@ -316,7 +316,6 @@ C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\rjsmcshtml.dswa.cache.
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\scopedcss\bundle\aspnetWebApp.styles.css
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\scopedcss\projectbundle\aspnetWebApp.bundle.scp.css
-C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\compressed\2v9ug8irji-{0}-j9chdc1vpq-j9chdc1vpq.gz
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\compressed\ewtddk668o-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\compressed\gpfv6wmni9-{0}-fr7q2aak1r-fr7q2aak1r.gz
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\compressed\vy8v8igqa2-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -390,3 +389,4 @@ C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\refint\aspnetWebApp.dl
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\aspnetWebApp.pdb
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\aspnetWebApp.genruntimeconfig.cache
 C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\ref\aspnetWebApp.dll
+C:\Users\106010241\Desktop\aspnetWebApp\obj\Debug\net10.0\compressed\2v9ug8irji-{0}-vhpd9vgkt8-vhpd9vgkt8.gz

@@ -1,5 +1,5 @@
-using aspnetWebApp.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using aspnetWebApp.Models;
 
 namespace aspnetWebApp.Pages;
 
@@ -11,9 +11,9 @@ public class ResumesModel : PageModel
     public string SpecialityFilter { get; set; } = "";
     public void OnGet(string? search, string? specialityFilter)
     {
-        // получаем все резюме
+        // получаем все существующие резюме
         var allStudents = CreateResumeModel.Students;
-        // сохраняем значения из формы
+        // сохраняем значения из поисковой формы
         Search = search?.Trim() ?? "";
         SpecialityFilter = specialityFilter ?? "";
         // получаем список специальностей
@@ -23,14 +23,15 @@ public class ResumesModel : PageModel
         .Distinct()
         .OrderBy(speciality => speciality)
         .ToList();
-        // полный список резюме
+        // начинаем с полного списка резюме
         var filteredStudents = allStudents.AsEnumerable();
         // фильтруем по имени
         if (!string.IsNullOrWhiteSpace(Search))
         {
             filteredStudents = filteredStudents
-            .Where(student => student.Name
-            .Contains(Search, StringComparison.OrdinalIgnoreCase));
+            .Where(student => student.Name.Contains(
+                Search, StringComparison.OrdinalIgnoreCase
+            ));
         }
         // фильтруем по специальности
         if (!string.IsNullOrWhiteSpace(SpecialityFilter))
