@@ -8,21 +8,21 @@ namespace aspnetWebApp.Pages;
 public class CreateResumeModel : PageModel
 {
     [BindProperty]
-    public string? Name { get; set; }
+    public required string Name { get; set; }
     [BindProperty]
-    public string? Phone { get; set; }
+    public required string Phone { get; set; }
     [BindProperty]
-    public string? Email { get; set; }
+    public required string Email { get; set; }
     [BindProperty]
-    public string? Speciality { get; set; }
+    public required string Speciality { get; set; }
     [BindProperty]
-    public string? Course { get; set; }
+    public required string Course { get; set; }
     [BindProperty]
-    public string? BirthDate { get; set; }
+    public required string BirthDate { get; set; }
     [BindProperty]
     public string[] Technologies { get; set; } = Array.Empty<string>();
     public static List<Student> Students { get; set; } = new();
-    public string? Message { get; set; }
+    public required string Message { get; set; }
     public void OnGet()
     {
         // Message = "Привет! Сообщение от C#";
@@ -32,15 +32,6 @@ public class CreateResumeModel : PageModel
         string technologies = Technologies.Length > 0
             ? string.Join(", ", Technologies)
             : "Не выбраны";
-
-        // string message = $"Анкета студента\n\n" +
-        //         $"Имя: {Name}\n" + 
-        //         $"Телефон: {Phone}\n" +
-        //         $"Email: {Email}\n" +
-        //         $"Специальность: {Speciality}\n" +
-        //         $"Курс: {Course}\n" +
-        //         $"Дата рождения: {BirthDate}\n" +
-        //         $"Технологии: {technologies}";
 
         var student = new Student
         {
